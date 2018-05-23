@@ -30,7 +30,7 @@ See also the list of [contributors](https://github.com/ASW_Front_HackerApp/contr
 
 ## License
 
-This project is licensed under the Open GNU Standar - see the [LICENSE](LICENSE) file for details
+This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 
