@@ -1,0 +1,20 @@
+<div class="container">
+
+	<div class="list-group" >
+		<div class="row">
+			<button type="button">↑</button>
+			<a href="http://{{contribution.url}}">{{contribution.title}}</a>
+			<small *ngIf="contribution.url!=null">({{contribution.url}})</small>
+		</div>
+		<div class="row">
+			<p>{{contribution.votes}} point by {{contribution.user_id}}</p>
+			<a href="#">created at {{contribution.created_at}}</a>
+			<p> | </p>
+			<a href="#">hide </a>
+			<p>|</p>
+			<a href="#">{{contribution.total_Comments}} comments</a>
+		</div>
+	</div>
+
+
+</div>

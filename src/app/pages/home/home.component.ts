@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   	this.contributionService.getContributions().
 	  subscribe(data => {
-	  	console.log("We got -> ", data.data)
 	  	this.contributions = data.data;
 	  });
   }

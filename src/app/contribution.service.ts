@@ -8,13 +8,17 @@ import { Contribution } from './classes/contribution';
 })
 export class ContributionService {
 
-	private url_all_ask = 'https://salty-beyond-71147.herokuapp.com/api/contributions/new';
+	private url = 'https://salty-beyond-71147.herokuapp.com/api';
   private url_test = "https://jsonplaceholder.typicode.com/posts"
   constructor(private http: HttpClient) { }
 
   /** GET from the server */
 	getContributions () {
-	  return this.http.get<Contribution[]>(this.url_all_ask)
+	  return this.http.get<Contribution[]>(this.url + "/contributions/new")
+	}
+
+	getContribution (id) {
+	  return this.http.get<Contribution>(this.url + "/contributions/" + id)
 	}
 
 }

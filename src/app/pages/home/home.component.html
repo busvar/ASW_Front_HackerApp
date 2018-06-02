@@ -3,8 +3,17 @@
 	<div class="list-group" *ngFor="let contribution of contributions ">
 		<div class="row">
 			<button type="button">↑</button>
+			<p *ngIf="contribution.url!=null">
 			<a href="http://{{contribution.url}}">{{contribution.title}}</a>
-			<small *ngIf="contribution.url!=null">({{contribution.url}})</small>
+			<small >({{contribution.url}})</small>
+			 </p>
+
+			 <p *ngIf="contribution.url ==null">
+			<a href="./contribution/{{contribution.id}}">{{contribution.title}}</a>
+			
+			 </p>
+
+			
 		</div>
 		<div class="row">
 			<p>{{contribution.votes}} point by {{contribution.user_id}}</p>
@@ -12,7 +21,7 @@
 			<p> | </p>
 			<a href="#">hide </a>
 			<p>|</p>
-			<a href="#">{{contribution.total_Comments}} comments</a>
+			<a href="./contribution/{{contribution.id}}">{{contribution.total_Comments}} comments</a>
 		</div>
 	</div>
 
