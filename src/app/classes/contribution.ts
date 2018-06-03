@@ -4,7 +4,7 @@ export interface Contribution {
   url: string;
   text: string;
   votes: number;
-  user_id: number;
+  user_id: string;
   parent_id: number;
   created_at: string;
   updated_at: string;

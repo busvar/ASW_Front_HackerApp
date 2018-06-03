@@ -4,19 +4,20 @@ import { Contribution } from './../../classes/contribution';
 import { Observable } from 'rxjs/Observable';
 
 
-@Component({
-  selector: 'app-new',
-  templateUrl: './new.component.html',
-  styleUrls: ['./new.component.css']
-})
-export class NewComponent implements OnInit {
 
-  contributions: Observable<Contribution[]>;
+@Component({
+  selector: 'app-ask',
+  templateUrl: './ask.component.html',
+  styleUrls: ['./ask.component.css']
+})
+export class AskComponent implements OnInit {
+
+	contributions: Observable<Contribution[]>;
 
   constructor(private contributionService: ContributionService) { }
 
   ngOnInit() {
-  	this.contributionService.getContributions().
+  	this.contributionService.getContributionsAsk().
 	  subscribe(data => {
 	  	this.contributions = data['data'];;
 	  });

@@ -18,18 +18,15 @@
 			
 		</div>
 		<div class="row">
-			<p>{{contribution.votes}} point by {{contribution.username}}</p>
-			<a href="#">created at {{contribution.created_at}}</a>
+			<p>{{contribution.votes}} point by <a href="./user/{{contribution.user_id}}">{{contribution.username}} </a> </p>
+			<a href="#"> &nbsp;created at {{contribution.created_at}}</a>
 			<p> | </p>
-			<a href="#">hide </a>
-			<p>|</p>
-			<a href="./contribution/{{contribution.id}}">{{contribution.total_Comments}} comments</a>
+			<a href="./contribution/{{contribution.id}}">{{contribution.total_Comments}} x comments</a>
 		</div>
 	</div>
 
 
-	<a href = "https://salty-beyond-71147.herokuapp.com/auth/google_oauth2"> Login </a>
-	<button (click)="getLogin()" type="button">Create Contr Ask</button>
+	<button (click)="create_ask()" type="button">Create Contr Ask</button>
 	<button (click)="create_url()" type="button">Create Contr Url</button>
 
 </div>

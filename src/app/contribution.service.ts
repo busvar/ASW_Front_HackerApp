@@ -20,6 +20,10 @@ export class ContributionService {
 	  return this.http.get<Contribution[]>(this.url + "/contributions/new")
 	}
 
+  getContributionsAsk () {
+    return this.http.get<Contribution[]>(this.url + "/contributions/ask")
+  }
+
 	getContribution (id) {
 	  return this.http.get<Contribution>(this.url + "/contributions/" + id)
 	}
@@ -86,6 +90,10 @@ export class ContributionService {
           console.log(err);
         });
 	}
+
+  getUser (id) {
+    return this.http.get<Contribution>(this.url + "/users/" + id);
+  }
 
 	create_url(){
 		const httpOptions = {
