@@ -8,13 +8,16 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NewComponent } from './pages/new/new.component';
 import { ContributionComponent } from './pages/contribution/contribution.component';
+import { LoginComponent } from './pages/login/login.component';
+
 import { NavbarComponent } from './elements/navbar/navbar.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },
   { path: 'new', component: NewComponent },
-  { path: 'contribution/:id', component: ContributionComponent }
+  { path: 'contribution/:id', component: ContributionComponent },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
@@ -23,7 +26,8 @@ const routes: Routes = [
     HomeComponent,
     NewComponent,
     NavbarComponent,
-    ContributionComponent
+    ContributionComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

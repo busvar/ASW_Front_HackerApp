@@ -2,7 +2,9 @@
 
 	<div class="list-group" *ngFor="let contribution of contributions ">
 		<div class="row">
-			<button type="button">↑</button>
+
+			<button (click)="upvoteContribution(contribution.id)" type="button">↑</button>
+			<button (click)="unvoteContribution(contribution.id)" type="button">↓</button>
 			<p *ngIf="contribution.url!=null">
 			<a href="http://{{contribution.url}}">{{contribution.title}}</a>
 			<small >({{contribution.url}})</small>
@@ -25,11 +27,9 @@
 		</div>
 	</div>
 
-	<div *ngFor="let contribution of contributions ">
-		{{contribution | json}}
-	</div>
 
-	<button (click)="create_ask()" type="button">Create Contr Ask</button>
+	<a href = "https://salty-beyond-71147.herokuapp.com/auth/google_oauth2"> Login </a>
+	<button (click)="getLogin()" type="button">Create Contr Ask</button>
 	<button (click)="create_url()" type="button">Create Contr Url</button>
 
 </div>

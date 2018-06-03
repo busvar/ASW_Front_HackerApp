@@ -31,4 +31,12 @@ export class HomeComponent implements OnInit {
   	console.log(this.contributionService.create_url())
   }
 
+  upvoteContribution(id){
+    console.log(this.contributionService.upvoteContribution(id))
+  }
+
+  unvoteContribution(id){
+    console.log(this.contributionService.unvoteContribution(id))
+  }
+
 }

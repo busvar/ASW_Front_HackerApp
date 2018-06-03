@@ -1,5 +1,5 @@
 export interface Contribution {
-  id: number;
+  id: string;
   title: string;
   url: string;
   text: string;

@@ -24,6 +24,47 @@ export class ContributionService {
 	  return this.http.get<Contribution>(this.url + "/contributions/" + id)
 	}
 
+  getLogin () {
+    return this.http.get<any>(this.url + "/auth/gmail/callback").subscribe(res => {
+          console.log(res);
+        },
+        err => {
+          console.log(err);
+        });
+  }
+
+  upvoteContribution (id) {
+
+  const httpOptions = {
+        headers: new HttpHeaders({ 
+          'X-API-KEY': '6bcd55333442a9c0b8230c8fc8a892a9',
+          'Content-Type':  'application/json'})
+    };
+
+    return this.http.put<any>(this.url + "/users/1/contributions/" + id + "/upvote",{}, httpOptions).subscribe(res => {
+          console.log(res);
+        },
+        err => {
+          console.log(err);
+        });
+  }
+  
+
+  unvoteContribution (id) {
+  const httpOptions = {
+        headers: new HttpHeaders({ 
+          'X-API-KEY': '6bcd55333442a9c0b8230c8fc8a892a9',
+          'Content-Type':  'application/json'})
+    };
+    return this.http.put(this.url + "/users/1/contributions/" + id + "/unvote", {}, httpOptions).subscribe(res => {
+          console.log(res);
+        },
+        err => {
+          console.log(err);
+        });
+  }
+
+
 	create_ask(){
 
 		const httpOptions = {
