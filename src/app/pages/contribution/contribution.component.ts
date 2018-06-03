@@ -26,6 +26,7 @@ export class ContributionComponent implements OnInit {
   ngOnInit() {
   this.contributionService.getContribution(this.id).
 	  subscribe(data => {
+      console.log(data.data);
 	  	this.contribution = data.data;
 	  });
   }

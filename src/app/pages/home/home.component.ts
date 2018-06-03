@@ -23,4 +23,12 @@ export class HomeComponent implements OnInit {
 	  });
   }
 
+  create_ask(){
+  	console.log(this.contributionService.create_ask())
+  }
+
+  create_url(){
+  	console.log(this.contributionService.create_url())
+  }
+
 }
