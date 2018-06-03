@@ -2,12 +2,13 @@
 
 	<div class="list-group" >
 		<div class="row">
-			<button type="button">↑</button>
+			<button (click)="upvoteContribution(contribution.id)" type="button">↑</button>
+			<button (click)="unvoteContribution(contribution.id)" type="button">↓</button>
 			<a href="http://{{contribution.url}}">{{contribution.title}}</a>
 			<small *ngIf="contribution.url!=null">({{contribution.url}})</small>
 		</div>
 		<div class="row">
-			<p>{{contribution.votes}} point by {{contribution.user_id}}</p>
+			<p>{{contribution.votes}} point by {{contribution.username}}</p>
 			<a href="#">created at {{contribution.created_at}}</a>
 			<p> | </p>
 			<a href="#">hide </a>

@@ -33,34 +33,38 @@ export class ContributionService {
         });
   }
 
-  upvoteContribution (id) {
+  upvoteContribution (id, callback) {
 
   const httpOptions = {
         headers: new HttpHeaders({ 
-          'X-API-KEY': '6bcd55333442a9c0b8230c8fc8a892a9',
+          'X-API-KEY': ' ba0892f4ca6109257ed2e7160ce6eaa3',
           'Content-Type':  'application/json'})
     };
 
     return this.http.put<any>(this.url + "/users/1/contributions/" + id + "/upvote",{}, httpOptions).subscribe(res => {
           console.log(res);
+          callback()
         },
         err => {
           console.log(err);
+          callback()
         });
   }
   
 
-  unvoteContribution (id) {
+  unvoteContribution (id, callback) {
   const httpOptions = {
         headers: new HttpHeaders({ 
-          'X-API-KEY': '6bcd55333442a9c0b8230c8fc8a892a9',
+          'X-API-KEY': ' ba0892f4ca6109257ed2e7160ce6eaa3',
           'Content-Type':  'application/json'})
     };
     return this.http.put(this.url + "/users/1/contributions/" + id + "/unvote", {}, httpOptions).subscribe(res => {
           console.log(res);
+          callback();
         },
         err => {
           console.log(err);
+          callback();
         });
   }
 
@@ -98,5 +102,7 @@ export class ContributionService {
           console.log(err);
         });
 	}
+
+  
 
 }

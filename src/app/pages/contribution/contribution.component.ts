@@ -26,9 +26,21 @@ export class ContributionComponent implements OnInit {
   ngOnInit() {
   this.contributionService.getContribution(this.id).
 	  subscribe(data => {
-      console.log(data.data);
-	  	this.contribution = data.data;
+	  	this.contribution = data['data'];;
 	  });
+  }
+
+  upvoteContribution(id) {
+    this.contributionService.upvoteContribution(id, function (callback) {
+      window.location.reload();
+    })
+    
+  }
+
+  unvoteContribution(id){
+    this.contributionService.unvoteContribution(id, function (callback) {
+      window.location.reload();
+    })
   }
 
 }

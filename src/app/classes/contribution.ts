@@ -10,4 +10,5 @@ export interface Contribution {
   updated_at: string;
   total_Comments: number;
   comment_type: string;
+  username: string;
 }

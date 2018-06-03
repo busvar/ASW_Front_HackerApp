@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   	this.contributionService.getContributions().
 	  subscribe(data => {
-	  	this.contributions = data.data;
+	  	this.contributions = data['data'];;
 	  });
   }
 
@@ -31,12 +31,17 @@ export class HomeComponent implements OnInit {
   	console.log(this.contributionService.create_url())
   }
 
-  upvoteContribution(id){
-    console.log(this.contributionService.upvoteContribution(id))
+  upvoteContribution(id) {
+    this.contributionService.upvoteContribution(id, function (callback) {
+      window.location.reload();
+    })
+    
   }
 
   unvoteContribution(id){
-    console.log(this.contributionService.unvoteContribution(id))
+    this.contributionService.unvoteContribution(id, function (callback) {
+      window.location.reload();
+    })
   }
 
 }
